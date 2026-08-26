@@ -1,0 +1,5 @@
+# KRACKED DEVS megazine — quick tunnel config.
+# Kept separate so the user's ~/.cloudflared/config.yml (Kim Guesthouse) is not loaded.
+tunnel: ""
+ingress:
+  - service: http://localhost:3000
