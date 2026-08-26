@@ -190,7 +190,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
             {/* Logo */}
             <button onClick={() => scrollTo('hero')} className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-[#141413]/5 transition-colors">
               <div className="w-7 h-7 rounded-[6px] overflow-hidden flex-shrink-0 bg-[#050505] flex items-center justify-center">
-                <svg viewBox="0 0 80 40" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
+                <svg viewBox="0 0 80 40" preserveAspectRatio="xMidYMid meet" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
               </div>
               <span className="hidden md:inline kd-caps text-[9px] tracking-[0.2em] text-[#6c6a64]">Kracked Devs</span>
             </button>
@@ -260,6 +260,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
               <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center bg-[#050505] border border-[#252320] shadow-[0_30px_80px_rgba(20,20,19,0.12)] group-hover:scale-105 group-hover:shadow-[0_40px_100px_rgba(20,20,19,0.18)] transition-all duration-700 overflow-hidden p-8">
                 <svg
                   viewBox="0 0 80 40"
+                  preserveAspectRatio="xMidYMid meet"
                   className="w-full h-full"
                   style={{
                     transform: `translate(${mousePos.x * 18}px, ${mousePos.y * 18}px)`,
@@ -521,7 +522,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
                       <div>
                         <span className="kd-caps text-[8px] text-[#a09d96]">Neural Editorial</span>
                         <div className="mt-3 w-20 h-20 rounded-[10px] overflow-hidden bg-[#050505] flex items-center justify-center">
-                          <svg viewBox="0 0 80 40" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
+                          <svg viewBox="0 0 80 40" preserveAspectRatio="xMidYMid meet" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
                         </div>
                         <h3 className="kd-display text-3xl text-[#faf9f5] mt-4 leading-[0.95]">KRACKED<br />DEVS</h3>
                       </div>
@@ -666,7 +667,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
             <div className="mt-16 pt-8 border-t border-[#252320]">
               <div className="flex items-center justify-center gap-3 mb-3">
                 <div className="w-6 h-6 rounded-[5px] overflow-hidden bg-[#050505] flex items-center justify-center">
-                  <svg viewBox="0 0 80 40" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
+                  <svg viewBox="0 0 80 40" preserveAspectRatio="xMidYMid meet" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
                 </div>
                 <span className="kd-caps text-[9px] tracking-[0.3em] text-[#a09d96]">Kracked Devs</span>
               </div>
