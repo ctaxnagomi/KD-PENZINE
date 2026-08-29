@@ -186,31 +186,33 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
       {/* Top nav bar — floating glass pill */}
       <nav className="fixed top-0 left-0 right-0 z-[1200] flex items-center justify-center pt-5 md:pt-6 pointer-events-none">
         <div className="kd-nav-pill pointer-events-auto">
-          <div className="flex items-center gap-1 px-2">
+          <div className="flex items-center gap-1 pl-2 pr-0">
             {/* Logo */}
-            <button onClick={() => scrollTo('hero')} className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-[#141413]/5 transition-colors">
+            <button onClick={() => scrollTo('hero')} className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-[#141413]/5 transition-colors flex-shrink-0">
               <div className="w-7 h-7 rounded-[6px] overflow-hidden flex-shrink-0 bg-[#050505] flex items-center justify-center">
                 <svg viewBox="0 0 80 40" preserveAspectRatio="xMidYMid meet" className="w-full h-full"><g fill="#00CC00"><rect x="10" y="8" width="4" height="24" /><rect x="14" y="16" width="4" height="4" opacity="0.6" /><rect x="18" y="12" width="4" height="4" opacity="0.736" /><rect x="22" y="8" width="4" height="4" opacity="0.936" /><rect x="14" y="20" width="4" height="4" opacity="0.6" /><rect x="18" y="24" width="4" height="4" /><rect x="22" y="28" width="4" height="4" opacity="0.6" /><rect x="40" y="8" width="4" height="24" opacity="0.6" /><rect x="44" y="8" width="8" height="4" opacity="0.6" /><rect x="44" y="28" width="8" height="4" opacity="0.6" /><rect x="52" y="12" width="4" height="16" opacity="0.6" /></g></svg>
               </div>
               <span className="hidden md:inline kd-caps text-[9px] tracking-[0.2em] text-[#6c6a64]">Kracked Devs</span>
             </button>
             {/* Divider */}
-            <div className="w-px h-5 bg-[#e6dfd8]" />
-            {/* Nav links */}
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollTo(item.id)}
-                className={`px-3 py-2 rounded-full text-[11px] font-medium tracking-wide transition-all duration-300 ${
-                  activeSection === item.id
-                    ? 'text-[#faf9f5]'
-                    : 'text-[#6c6a64] hover:text-[#141413] hover:bg-[#141413]/[0.04]'
-                }`}
-                style={activeSection === item.id ? { background: themeColor } : {}}
-              >
-                {item.label}
-              </button>
-            ))}
+            <div className="w-px h-5 bg-[#e6dfd8] flex-shrink-0" />
+            {/* Nav links — horizontally scrollable on mobile so nothing is clipped */}
+            <div className="flex items-center gap-1 overflow-x-auto whitespace-nowrap rounded-r-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollTo(item.id)}
+                  className={`px-3 py-2 rounded-full text-[11px] font-medium tracking-wide transition-all duration-300 flex-shrink-0 ${
+                    activeSection === item.id
+                      ? 'text-[#faf9f5]'
+                      : 'text-[#6c6a64] hover:text-[#141413] hover:bg-[#141413]/[0.04]'
+                  }`}
+                  style={activeSection === item.id ? { background: themeColor } : {}}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </nav>
@@ -227,7 +229,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         {/* ─── HERO ─── */}
         <section
           id="section-hero"
-          className="snap-start flex-shrink-0 w-screen h-full flex items-center justify-center relative"
+          className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative"
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -248,7 +250,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
             </svg>
           </div>
 
-          <div className="relative z-10 flex flex-col items-center gap-8 px-6 text-center">
+          <div className="relative z-10 min-h-full w-full flex flex-col items-center justify-center gap-8 px-6 py-24 text-center">
             {/* Eyebrow */}
             <div className="kd-caps text-[10px] md:text-[11px] tracking-[0.4em] text-[#8e8b82]">
               Neural Editorial Archive — Vol 01–07
@@ -316,10 +318,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── ARCHIVES ─── */}
-        <section id="section-archives" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-archives" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24">
             {/* Section header */}
             <div className="mb-10 md:mb-14">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">Volume Archive</span>
@@ -387,10 +389,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── FAQ ─── */}
-        <section id="section-faq" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-faq" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#faf9f5]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 max-w-4xl mx-auto">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24 max-w-4xl mx-auto">
             <div className="mb-10 md:mb-14">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">Questions & Answers</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -430,10 +432,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── BLOG ─── */}
-        <section id="section-blog" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-blog" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24">
             <div className="mb-10 md:mb-14">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">From the Network</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -477,10 +479,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── ABOUT ─── */}
-        <section id="section-about" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-about" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#181715]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
               {/* Left: Text */}
               <div>
@@ -543,10 +545,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── ROADMAP ─── */}
-        <section id="section-roadmap" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-roadmap" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24">
             <div className="mb-10 md:mb-14">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">2026 Vision</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -619,10 +621,10 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
 
         {/* ─── CONNECT ─── */}
-        <section id="section-connect" className="snap-start flex-shrink-0 w-screen h-full flex items-center relative">
+        <section id="section-connect" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#181715]" />
 
-          <div className="relative z-10 w-full px-8 md:px-16 lg:px-24 max-w-3xl mx-auto text-center">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24 max-w-3xl mx-auto text-center">
             <span className="kd-caps text-[9px] tracking-[0.4em] text-[#a09d96]">Join the Network</span>
             <h2 className="kd-display text-3xl md:text-5xl text-[#faf9f5] mt-3 leading-[0.95]">
               Stay Connected
