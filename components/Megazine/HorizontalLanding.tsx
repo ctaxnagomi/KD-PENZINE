@@ -189,8 +189,8 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
       {/* Noise grain overlay */}
       <div className="kd-noise-overlay" />
 
-      {/* Top nav bar — floating glass pill */}
-      <nav className="fixed top-0 left-0 right-0 z-[1200] flex items-center justify-center pt-5 md:pt-6 pointer-events-none">
+      {/* Bottom nav bar — floating glass pill */}
+      <nav className="fixed bottom-0 left-0 right-0 z-[1200] flex items-center justify-center pb-5 md:pb-6 pointer-events-none">
         <div className="kd-nav-pill pointer-events-auto max-w-[calc(100vw-24px)]">
           <div className="flex items-center gap-1 pl-2 pr-0 w-full min-w-0">
             {/* Logo */}
@@ -327,7 +327,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-archives" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 py-12 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12">
             {/* Section header */}
             <div className="mb-10 md:mb-14 lg:mb-0">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">Volume Archive</span>
@@ -398,7 +398,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-faq" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#faf9f5]" />
 
-          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 py-12 md:px-16 lg:px-24 max-w-4xl mx-auto">
+          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12 max-w-4xl mx-auto">
             <div className="mb-10 md:mb-14 lg:mb-0">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">Questions & Answers</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -441,7 +441,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-blog" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 py-12 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12">
             <div className="mb-10 md:mb-14 lg:mb-0">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">From the Network</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -488,7 +488,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-about" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#181715]" />
 
-          <div className="relative z-10 min-h-full w-full flex items-center px-8 py-12 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex items-center px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
               {/* Left: Text */}
               <div>
@@ -554,7 +554,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-roadmap" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-gradient-to-br from-[#faf9f5] via-[#f5f0e8] to-[#efe9de]" />
 
-          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 py-12 md:px-16 lg:px-24">
+          <div className="relative z-10 min-h-full w-full flex flex-col lg:flex-row lg:items-center lg:gap-16 px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12">
             <div className="mb-10 md:mb-14 lg:mb-0">
               <span className="kd-caps text-[9px] tracking-[0.4em] text-[#8e8b82]">2026 Vision</span>
               <h2 className="kd-display text-3xl md:text-5xl text-[#141413] mt-3 leading-[0.95]">
@@ -630,7 +630,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         <section id="section-connect" className="snap-start flex-shrink-0 w-screen h-full overflow-y-auto relative">
           <div className="absolute inset-0 bg-[#181715]" />
 
-          <div className="relative z-10 min-h-full w-full flex flex-col items-center px-8 py-12 md:px-16 lg:px-24 max-w-3xl mx-auto text-center">
+          <div className="relative z-10 min-h-full w-full flex flex-col items-center px-8 pt-12 pb-28 md:px-16 lg:px-24 lg:pb-12 max-w-3xl mx-auto text-center">
             <span className="kd-caps text-[9px] tracking-[0.4em] text-[#a09d96]">Join the Network</span>
             <h2 className="kd-display text-3xl md:text-5xl text-[#faf9f5] mt-3 leading-[0.95]">
               Stay Connected
@@ -687,8 +687,8 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
         </section>
       </div>
 
-      {/* Bottom: section indicator dots */}
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[1200] flex items-center gap-2">
+      {/* Right: section indicator dots */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-[1200] flex flex-col items-center gap-3">
         {NAV_ITEMS.map((item) => (
           <button
             key={item.id}
@@ -697,7 +697,7 @@ const HorizontalLanding: React.FC<HorizontalLandingProps> = ({ onEnter, availabl
             aria-label={item.label}
           >
             <div className={`w-1.5 h-1.5 rounded-full transition-all duration-400 ${
-              activeSection === item.id ? 'w-6' : 'hover:opacity-60'
+              activeSection === item.id ? 'h-6' : 'hover:opacity-60'
             }`}
             style={{ background: activeSection === item.id ? themeColor : '#d5cec4' }} />
           </button>
