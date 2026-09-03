@@ -1,1 +1,0 @@
-Usage is straightforward and documented on the rootfolder README
