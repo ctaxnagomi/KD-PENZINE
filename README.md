@@ -1,8 +1,34 @@
-# KRACKED DEVS Megazine Engine v2.0
+# KRACKED DEVS Penzine — Megazine Engine v2.0
 
-Interactive editorial megazine with a horizontal scroll landing page, 3D page-flipping, volume management, and hand-tracking gestures. Created by @RikayuWilzam.
+> **Credit & home:** [www.krackeddevs.com](https://www.krackeddevs.com) — the self-sustaining Malaysian builder ecosystem that this magazine belongs to and reports on. Created by [@RikayuWilzam](https://www.krackeddevs.com).
+
+Interactive editorial megazine with a horizontal scroll landing page, 3D page-flipping, volume management, and hand-tracking gestures. The **KD Penzine** is KrackedDevs' own journal — the community-written record of what Malaysian developers are building, shipped monthly as numbered "volumes" of markdown pages.
 
 **Live:** https://kd-penzine.pages.dev · **Alias:** https://master.kd-penzine.pages.dev
+
+## What is KD Penzine?
+
+KD Penzine is the official journal of the KrackedDevs community. It turns the network's monthly output — builds, essays, bounties, ecosystem news — into a long-form, page-flipping magazine. Each **Volume** is a themed issue (e.g. *The Voice*, *The Spatial Quarter*), compiled from the community and the wider Malaysian/IJSEA AI ecosystem.
+
+## How to Contribute — Journaling
+
+Anyone in the network can contribute to a future volume. The magazine believes **the network writes its own story**, and every contributor is credited as co-author.
+
+- **Submit a node** — a build you shipped, an essay on where AI is going, a tool you love, or a lesson you learned the hard way. Anything that's local, practical, and real qualifies.
+- **Vote** — when the shortlist is live, the community votes on which nodes make the next volume.
+- **Where** — submissions and votes go through the form at [krackeddevs.com](https://www.krackeddevs.com).
+
+Strong nodes are **local, practical, and shipped** — real builds and real perspectives over polish.
+
+## Key Achievements — KrackedDevs × Malaysia
+
+A snapshot of the ecosystem the magazine reports on:
+
+- **AIMTO × MyDIGITAL research partnership** — collaborative research aligning the community's AI practice with Malaysia's national digital-economy roadmap.
+- **KD Labs product suite** — community-built, community-shipped tools: `jomqr.my` (QR digital cards), `kuntum.app` (AI-native hiring), `mypeta.ai` (Malaysia tech map), `wiki.krackeddevs.com` (ecosystem index), `fluid.krackeddevs.com` (generative backgrounds), and `pasarapi.xyz` (verified SE Asian APIs).
+- **KD Academy** — structured learning paths, bootcamps, and workshops focused on practical AI training.
+- **KD Community** — Guilds (e.g. Pingu-Tech Devs, PeakyBuildr), hackathons, bounties, and live events across Discord, X/Threads, and the KD Square forum.
+- **Bounty-backed community volumes** — a monthly (initially weekly) editorial loop that compiles each issue from community submissions, votes, and the ecosystem pulse.
 
 ## Stack
 
@@ -63,7 +89,7 @@ Camera-based page turning via MediaPipe hand landmark detection (loaded on deman
 - **Embed URL**: `.../embed/volume-name`
 
 ### 6. Per-Volume Theme System
-Each volume carries a theme (`neon/editorial/amber/teal/terra/bronze/violet/ocean`) resolved by `resolveTheme(volume, index)`. CSS-only theme backgrounds via `theme-bg theme-<variant>`.
+Each volume carries a theme (`neon/editorial/amber/teal/terra/bronze/violet/ocean/sage`) resolved by `resolveTheme(volume, index)`. CSS-only theme backgrounds via `theme-bg theme-<variant>`.
 
 ## Directory
 
@@ -71,4 +97,4 @@ Each volume carries a theme (`neon/editorial/amber/teal/terra/bronze/violet/ocea
 - `pages/MegazineReader.tsx` — reader shell
 - `components/Megazine/` — `Book`, `Page`, `Intro` (legacy), `HorizontalLanding`, `VolumeSelector`, `useHandTracking`
 - `components/CMS/PageBuilder.tsx` — volume editor
-- `content/volumes.ts` — `VOLUME_SEED`, 7 volumes of markdown (Jan–Jul 2026)
+- `content/volumes.ts` — `VOLUME_SEED`, 8 volumes of markdown (Jan–Aug 2026)

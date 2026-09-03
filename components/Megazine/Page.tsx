@@ -1,6 +1,18 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Volume } from '../../types';
+
+function useViewportWidth() {
+  const [width, setWidth] = useState<number>(
+    () => (typeof window !== 'undefined' ? window.innerWidth : 1024)
+  );
+  useEffect(() => {
+    const onResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+  return width;
+}
 
 interface PageProps {
   index: number;
@@ -25,6 +37,7 @@ interface Block {
 }
 
 const Page: React.FC<PageProps> = ({ index, total, current, content, volume, dragX = 0, isDragging = false, isFlipping = false }) => {
+  const viewportWidth = useViewportWidth();
   const isActive = index === current;
   const isFlipped = index < current;
   const isUpcoming = index === current + 1;
@@ -51,7 +64,7 @@ const Page: React.FC<PageProps> = ({ index, total, current, content, volume, dra
   const fontSizeScale = useMemo(() => {
     if (!volume.layout?.autoFit) return 0.85;
     const charCount = content.length;
-    const isMobile = window.innerWidth < 768;
+    const isMobile = viewportWidth < 768;
     const base = isMobile ? 0.75 : 0.9;
 
     if (charCount > 4000) return base * 0.38;
@@ -60,7 +73,7 @@ const Page: React.FC<PageProps> = ({ index, total, current, content, volume, dra
     if (charCount > 1200) return base * 0.70;
     if (charCount > 600) return base * 0.85;
     return base;
-  }, [content, volume.layout?.autoFit]);
+  }, [content, volume.layout?.autoFit, viewportWidth]);
 
   const parseYouTubeId = (url: string): string | null => {
     const patterns = [
@@ -293,7 +306,7 @@ const Page: React.FC<PageProps> = ({ index, total, current, content, volume, dra
     }
   };
 
-  const showRail = window.innerWidth >= 1024;
+  const showRail = viewportWidth >= 1024;
   const marginNotes = showRail ? blocks.filter((b) => b.type === 'margin') : [];
 
   return (
@@ -347,7 +360,7 @@ const Page: React.FC<PageProps> = ({ index, total, current, content, volume, dra
                 <div
                   className="h-full overflow-hidden"
                   style={{
-                    columnCount: window.innerWidth < 768 ? 1 : (volume.layout?.newspaperMode ? (volume.layout?.columns || 2) : 1),
+                    columnCount: viewportWidth < 768 ? 1 : (volume.layout?.newspaperMode ? (volume.layout?.columns || 2) : 1),
                     columnFill: 'auto',
                     columnRule: `1px solid ${themeColor}1f`,
                   }}

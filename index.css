@@ -325,6 +325,17 @@ body {
   animation: kd-theme-drift 23s ease-in-out infinite;
 }
 
+.theme-sage {
+  background-color: #f4f7f2;
+  --kd-accent: #7d9c6c;
+  --kd-accent-rgb: 125, 156, 108;
+}
+.theme-sage .kd-theme-bg {
+  background: linear-gradient(120deg, #f4f7f2, #e0ead8, #f7faf5);
+  background-size: 300% 300%;
+  animation: kd-theme-drift 22s ease-in-out infinite;
+}
+
 @keyframes kd-theme-drift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -339,6 +350,7 @@ body {
   .theme-bronze .kd-theme-bg,
   .theme-violet .kd-theme-bg,
   .theme-ocean .kd-theme-bg,
+  .theme-sage .kd-theme-bg,
   .theme-neon .kd-theme-bg::after {
     animation: none;
   }
@@ -634,6 +646,28 @@ body {
   color: var(--kd-accent, #cc785c) !important;
 }
 
+/* Archive dropdown: staggered node swarm-in */
+.kd-swarm-in .kd-swarm-item {
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: kd-swarm-in 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.kd-swarm-in .kd-swarm-item:nth-child(1) { animation-delay: 0ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(2) { animation-delay: 32ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(3) { animation-delay: 64ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(4) { animation-delay: 96ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(5) { animation-delay: 128ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(6) { animation-delay: 160ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(7) { animation-delay: 192ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(8) { animation-delay: 224ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(9) { animation-delay: 256ms; }
+.kd-swarm-in .kd-swarm-item:nth-child(n+10) { animation-delay: 288ms; }
+
+@keyframes kd-swarm-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .kd-video-holder {
   position: relative;
   display: inline-block;
@@ -656,7 +690,12 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .kd-hotspot::before,
-  .kd-hand-pointer {
+  .kd-hand-pointer,
+  .kd-swarm-in .kd-swarm-item {
     animation: none;
+  }
+  .kd-swarm-in .kd-swarm-item {
+    opacity: 1;
+    transform: none;
   }
 }

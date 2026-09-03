@@ -5,7 +5,7 @@ export interface VolumeLayout {
   newspaperMode?: boolean;
 }
 
-export type ThemeVariant = 'neon' | 'editorial' | 'amber' | 'teal' | 'terra' | 'bronze' | 'violet' | 'ocean';
+export type ThemeVariant = 'neon' | 'editorial' | 'amber' | 'teal' | 'terra' | 'bronze' | 'violet' | 'ocean' | 'sage';
 
 export interface VolumeTheme {
   variant: ThemeVariant;
@@ -36,6 +36,7 @@ const INDEX_THEMES: VolumeTheme[] = [
   { variant: 'bronze', accent: '#9c7c52' },
   { variant: 'violet', accent: '#8a7bd8' },
   { variant: 'ocean', accent: '#3d7ea6' },
+  { variant: 'sage', accent: '#7d9c6c' },
 ];
 
 export function resolveTheme(volume: Partial<Volume> | null | undefined, index = 0): VolumeTheme {
