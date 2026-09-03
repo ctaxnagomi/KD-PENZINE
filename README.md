@@ -110,7 +110,7 @@ Dense editorial layout with dynamic font scaling and multi-column CSS.
 - Legacy `[SOCIALS:]`, `[BADGE:]`, `[SIGNATURE:]`, `[TWITTER_FEED:]` directives are treated as plain text.
 
 ### 3. Hand Tracking
-Camera-based page turning via MediaPipe hand landmark detection (loaded on demand, progressive enhancement).
+Camera-based page turning via MediaPipe hand landmark detection (loaded on demand, progressive enhancement). *Foundation build only — fully functional on the 3.0 engine.*
 
 - Wave left → next page, wave right → previous page.
 - Click the HAND pill to enable; auto-calibrates on first hand detection.
